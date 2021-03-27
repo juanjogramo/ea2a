@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['']
+    password: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder) { }
@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-    }
+    } else {
+      console.log("Invalid from"); 
+    } 
   }
 }
