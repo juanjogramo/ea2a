@@ -37,6 +37,12 @@
     </form>
      <br>
      <p>
-         {{ contactusForm.value | json }}
+        Datos del formulario {{ contactusForm.value | json }}
+     </p>
+     <p>
+         Formulario es válido?: {{ contactusForm.valid }}
+     </p>
+     <p>
+         Estado del Formulario: {{ contactusForm.status }}
      </p>
 </div>

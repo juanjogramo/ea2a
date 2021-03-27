@@ -1,4 +1,4 @@
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,10 +10,10 @@ export class ContactusComponent implements OnInit {
 
   contactusForm = this.fb.group({
     person: this.fb.group({
-      firstname: [''],
-      lastname: ['']  
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required]  
     }),
-    email: [''],
+    email: ['', [Validators.required, Validators.email]],
     message: ['']
   });
 
@@ -38,7 +38,11 @@ export class ContactusComponent implements OnInit {
   }
   
   onSubmit() {
-    console.log(this.contactusForm.value);
+    if (this.contactusForm.valid) {
+      console.log(this.contactusForm.value);
+    } else {
+      alert("Formulario no válido");
+    }
   }
 
 }
