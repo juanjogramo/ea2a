@@ -6,6 +6,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/access/login/login.component';
 import { TeamComponent } from './pages/team/team.component';
+import { ProjectComponent } from './pages/project/project.component';
 
 const routes: Routes = [
     { 
@@ -27,6 +28,14 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'project',
+        component: ProjectComponent
+    },
+    {
+        path: 'project/:id',
+        component: ProjectComponent
     },
     {
         path: '',
